@@ -95,3 +95,9 @@ TAIL        :CONS -> :OBJ
 
 LIST        :OBJ -> :OBJ -> ... -> :OBJ -> :CONS
     (LIST OBJ1 OBJ2 ... OBJn) => List
+
+MATCH       :OBJ -> :OBJ -> :CONS
+    (MATCH EXP1 EXP2) => Temp ENV
+
+TMATCH      :OBJ -> :OBJ -> :CONS
+    (TMATCH TYPE-EXP EXP) => Temp ENV
