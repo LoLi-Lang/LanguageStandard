@@ -1,0 +1,4 @@
+The Language Standard of LoLi
+=
+---
+The design and implementation of LoLi should be discussed here.
