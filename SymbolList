@@ -51,7 +51,7 @@ SET!        :SYM -> :OBJ -> :OBJ
 SETT!        :SYM -> :OBJ -> :KEY -> :OBJ
     (SETT! SYM VALUE :TYPE) => VALUE or ERROR
 
-\\          :KEY -> [:SYM -> :KEY] -> :OBJ -> :LAMBDA
+\\          :KEY -> [:SYM | :SYM -> :KEY] -> :OBJ -> :LAMBDA
     (\\ :TYPE (ARGS) EXP) => LAMBDA EXPRESSION
 
 WITH        :SYM -> :OBJ -> :OBJ -> :OBJ
