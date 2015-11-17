@@ -4,7 +4,7 @@ Types:                      Identifier
 Object                      :OBJ
 |---Number                  :NUM
     |---Integer             :INT
-    |---Float               :FLT
+    |---Real Number         :REAL
     |---Ratio               :RAT
 |---Symbol                  :SYM
 |---Keyword                 :KEY
