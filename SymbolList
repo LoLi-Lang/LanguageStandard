@@ -13,8 +13,11 @@ Object                      :OBJ
     |---Lambda              :LAMBDA
     |---Primitve Procedure  :PROC
 |---Cons                    :CONS
+    |---Tuple               :TUP
+        |---List            :LST
 |---Character               :CHAR
 |---String                  :STR
+|---Error                   :ERR
 
 The type will be denoted as:
 :TYPE1 -> :TYPE2 -> ... -> OBJ -> TYPEn
@@ -51,8 +54,10 @@ SET!        :SYM -> :OBJ -> :OBJ
 SETT!        :SYM -> :OBJ -> :KEY -> :OBJ
     (SETT! SYM VALUE :TYPE) => VALUE or ERROR
 
-\\          :KEY -> [:SYM | :SYM -> :KEY] -> :OBJ -> :LAMBDA
-    (\\ :TYPE (ARGS) EXP) => LAMBDA EXPRESSION
+\\          [:KEY -> [:SYM | :SYM -> :KEY] -> :OBJ] -> :LAMBDA
+    (\\ (:TYPE-1 (ARGS-1) EXP-1)
+        (:TYPE-2 (ARGS-2) EXP-2)
+        ...) => LAMBDA EXPRESSION
 
 WITH        :SYM -> :OBJ -> :OBJ -> :OBJ
     (WITH SYM VALUE EXP) => RETURN OF EXP
@@ -71,7 +76,7 @@ ASSERT      [:SYM -> :KEY] -> :OBJ -> :OBJ
 
 TYPE-OF     :SYM -> :SYM -> :OBJ -> :OBJ
     (TYPE-OF SYM1 SYM2 EXP) => RETURN OF EXP
-    
+
 TYPE-OF-R   [:SYM -> :SYM] -> :OBJ -> :OBJ
     (TYPE-OF ((SYM1 SYM2) (SYM3 SYM4) ... (SYMn SYMn+1)) EXP) => RETURN OF EXP
 
@@ -93,7 +98,10 @@ HEAD        :CONS -> :OBJ
 TAIL        :CONS -> :OBJ
     (TAIL CONS) => TAIL
 
-LIST        :OBJ -> :OBJ -> ... -> :OBJ -> :CONS
+TUPLE       :OBJ -> :OBJ -> ... -> :OBJ -> :TUP
+    (TUPLE OBJ1 OBJ2 ... OBJn) => Tuple
+
+LIST        :TYPEa -> :TYPEa -> ... -> :TYPEa -> :LST
     (LIST OBJ1 OBJ2 ... OBJn) => List
 
 MATCH       :OBJ -> :OBJ -> :CONS
